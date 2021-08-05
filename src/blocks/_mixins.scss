@@ -1,0 +1,21 @@
+@mixin main-text {
+  font-family: 'CoreSansC' ,sans-serif;
+  font-weight: 400;
+}
+
+@mixin transition($target) {
+  transition: $target 0.3s ease;
+}
+
+@mixin link-hover-effect {
+  @include transition(opacity);
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:focus {
+    outline: none;
+    opacity: 0.5;
+  }
+}

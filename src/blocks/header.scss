@@ -1,0 +1,80 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+  min-height: $header-height;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 400px);
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contacts-number {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  &__contacts-label {
+    font-size: 16px;
+    line-height: 1.19;
+    opacity: 0.5;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__list-item {
+    display: flex;
+
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+      margin-left: 20px;
+    }
+  }
+
+  &__menu-link {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.19;
+
+    @include link-hover-effect;
+  }
+
+  &__menu-btn {
+    box-sizing: border-box;
+    width: 48px;
+    height: 10px;
+
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: solid 2px $text-color;
+    border-bottom: solid 2px $text-color;
+    cursor: pointer;
+
+    @include link-hover-effect;
+  }
+}

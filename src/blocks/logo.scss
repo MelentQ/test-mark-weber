@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  height: fit-content;
+
+  font-size: 16px;
+  line-height: 1;
+
+  &__icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 8px;
+    width: 47px;
+    height: 47px;
+
+    border-radius: 50%;
+    background: $logo-bg-color;
+    box-shadow: -6px 8px 8px rgba(0, 0, 0, 0.1);
+  }
+}
