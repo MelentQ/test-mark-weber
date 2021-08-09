@@ -6,11 +6,16 @@ export default class BackgroundSlider {
    * Туториал: https://www.youtube.com/watch?v=2Bo619QsSE4
    * @param {Object} selectors - объект с селекторами
    */
-  constructor({sliderContainerSelector, sliderTrackSelector, sliderItemSelector}) {
+  constructor({sliderContainerSelector, sliderTrackSelector, sliderItemSelector}, data) {
+    this._currentSlide = 0;
     this._position = 0;
 
     this._container = document.querySelector(sliderContainerSelector);
     this._track = this._container.querySelector(sliderTrackSelector);
+
+    this._data = data;
+    this._generateSlides(this._data);
+
     this._items = this._track.querySelectorAll(sliderItemSelector);
     this._itemsCount = this._items.length;
 
@@ -22,17 +27,54 @@ export default class BackgroundSlider {
 
     this._setEventListeners();
     this._checkBtns();
+
+    this._titleElement = document.querySelector('.intro__title');
+  }
+
+  _generateSlides(data) {
+    data.forEach(slide => {
+      if (slide.type === "video") {
+        const slideContainer = this._getTemplateBySelector('.background-slider__slide-template_type_video');
+
+        const videoElement = slideContainer.querySelector('.background-slider__media');
+
+        const videoPath = slide.fileName;
+        const video = require(`../images/intro/${videoPath}`);
+
+        videoElement.src = video;
+
+        this._track.append(slideContainer);
+      }
+
+      if (slide.type === "image") {
+        const slideContainer = this._getTemplateBySelector('.background-slider__slide-template_type_image');
+
+        const imageElement = slideContainer.querySelector('.background-slider__media');
+
+        const imagePath = slide.fileName;
+        const image = require(`../images/intro/${imagePath}`);
+
+        imageElement.src = image;
+        imageElement.alt = slide.title;
+
+        this._track.append(slideContainer);
+      }
+    })
   }
 
   _setEventListeners() {
     this._btnPrev.addEventListener('click', () => {
       this._position += this._itemWidth;
+      this._currentSlide--;
+      this._updateTitle();
 
       this._setPosition();
     })
 
     this._btnNext.addEventListener('click', () => {
       this._position -= this._itemWidth;
+      this._currentSlide++;
+      this._updateTitle();
 
       this._setPosition();
     })
@@ -53,5 +95,29 @@ export default class BackgroundSlider {
     this._position === -maxPos ?
       this._btnNext.setAttribute('disabled', 'disabled') :
       this._btnNext.removeAttribute('disabled');
+  }
+
+  /**
+   * Обновляет заголовок на странице в соответствии со слайдом
+   */
+  _updateTitle() {
+    // Первое, что пришло в голову. Просто хранить порядковый номер слайда и
+    // брать для него данные из элемента массива, индекс которого равен номеру слайда.
+    // Короче на прямую заголовок и слайд никак не связаны.
+    this._titleElement.textContent = this._data[this._currentSlide].title || "Ошибка, заголовок не задан!";
+  }
+
+  /**
+   * Возвращает темплейт-элемент по его селектору
+   * @param {String} templateSelector - селектор шаблона
+   * @param {Object} container - контейнер, в котором нужно искать шаблон, по умолчанию - document
+   * @returns {Object}
+   */
+   _getTemplateBySelector(templateSelector, container = document) {
+    return container
+    .querySelector(templateSelector)
+    .content
+    .children[0]
+    .cloneNode(true);
   }
 }

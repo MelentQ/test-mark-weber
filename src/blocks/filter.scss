@@ -46,6 +46,13 @@
     border-radius: 7px;
     overflow: hidden;
     border: none;
+
+    &_type {
+
+      &_dropdown {
+        overflow: unset;
+      }
+    }
   }
 
   &__buttons {

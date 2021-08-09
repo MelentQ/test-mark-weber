@@ -47,12 +47,17 @@
 
       <div class="background-slider">
         <ul class="background-slider__track">
-          <li class="background-slider__slide">
-            <video class="background-slider__media" loading="lazy" src="<%=require('./images/intro/Puppies.webm')%>" autoplay muted loop></video>
-          </li>
-          <li class="background-slider__slide">
-            <video class="background-slider__media" loading="lazy" src="<%=require('./images/intro/Flowers.webm')%>" autoplay muted loop></video>
-          </li>
+          <template class="background-slider__slide-template_type_video">
+            <li class="background-slider__slide">
+              <video class="background-slider__media" loading="lazy" autoplay muted loop></video>
+            </li>
+          </template>
+
+          <template class="background-slider__slide-template_type_image">
+            <li class="background-slider__slide">
+              <img class="background-slider__media">
+            </li>
+          </template>
         </ul>
       </div>
 
@@ -110,7 +115,7 @@
 
             <figure class="links-with-preview__preview">
               <div class="links-with-preview__image-container">
-                <img class="links-with-preview__image" src="<%=require('./images/complexes/severny-park.jpg')%>" loading="lazy" alt="preview">
+                <img class="links-with-preview__image" loading="lazy" alt="preview">
               </div>
               <figcaption class="links-with-preview__image-title"></figcaption>
               <p class="links-with-preview__image-description"></p>
@@ -151,30 +156,30 @@
         </div>
       </section>
 
-      <!-- <section class="filter-form">
+      <section class="filter-form">
         <form class="filter" name="filter">
           <div class="filter__inputs">
             <div class="filter__container">
               <span class="filter__container-name">Количество комнат</span>
               <fieldset class="filter__inputs-container">
                 <label class="checkbox-input checkbox-input_checked" for="amount0">
-                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount0" name="amount0" type="checkbox" checked>
+                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount0" name="0" type="checkbox" checked>
                   <span class="checkbox-input__pseudo-item">Студия</span>
                 </label>
                 <label class="checkbox-input" for="amount1">
-                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount1" name="amount1" type="checkbox">
+                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount1" name="1" type="checkbox">
                   <span class="checkbox-input__pseudo-item">1</span>
                 </label>
                 <label class="checkbox-input" for="amount2">
-                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount2" name="amount2" type="checkbox">
+                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount2" name="2" type="checkbox">
                   <span class="checkbox-input__pseudo-item">2</span>
                 </label>
                 <label class="checkbox-input" for="amount3">
-                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount3" name="amount3" type="checkbox">
+                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount3" name="3" type="checkbox">
                   <span class="checkbox-input__pseudo-item">3</span>
                 </label>
                 <label class="checkbox-input" for="amount4">
-                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount4" name="amount4" type="checkbox">
+                  <input class="checkbox-input__hidden-item input input_type_rooms" id="amount4" name="4" type="checkbox">
                   <span class="checkbox-input__pseudo-item">4</span>
                 </label>
               </fieldset>
@@ -185,13 +190,13 @@
               <fieldset class="filter__inputs-container">
                 <label class="text-input" for="squareFrom">
                   <span class="text-input__before-label">от</span>
-                  <input class="text-input__form-element input input_type_square" name="squareFrom" type="text" value="32" id="squareFrom">
+                  <input class="text-input__form-element input input_type_square" name="from" type="text" value="32" id="squareFrom">
                   <span class="text-input__after-label">м²</span>
                 </label>
 
                 <label class="text-input" for="squareTo">
                   <span class="text-input__before-label">до</span>
-                  <input class="text-input__form-element input input_type_square" name="squareTo" type="text" value="186" id="squareTo">
+                  <input class="text-input__form-element input input_type_square" name="to" type="text" value="186" id="squareTo">
                   <span class="text-input__after-label">м²</span>
                 </label>
               </fieldset>
@@ -202,25 +207,34 @@
               <fieldset class="filter__inputs-container">
                 <label class="text-input" for="priceFrom">
                   <span class="text-input__before-label">от</span>
-                  <input class="text-input__form-element input input_type_price" name="priceFrom" type="text" value="1.5" id="priceFrom">
+                  <input class="text-input__form-element input input_type_price" name="from" type="text" value="1.5" id="priceFrom">
                 </label>
 
                 <label class="text-input" for="priceTo">
                   <span class="text-input__before-label">до</span>
-                  <input class="text-input__form-element input input_type_price" name="priceTo" type="text" value="17.5" id="priceTo">
+                  <input class="text-input__form-element input input_type_price" name="to" type="text" value="17.5" id="priceTo">
                 </label>
               </fieldset>
             </div>
 
             <div class="filter__container">
               <span class="filter__container-name">Жилой комплекс</span>
-              <fieldset class="filter__inputs-container">
-                <select class="select-input">
-                  <option class="select-input__option">Северный парк</option>
-                  <option class="select-input__option">Северный парк 2</option>
-                  <option class="select-input__option">Северный парк 3</option>
-                  <option class="select-input__option">Северный парк 4</option>
-                </select>
+              <fieldset class="filter__inputs-container filter__inputs-container_type_dropdown">
+                <div class="select-input">
+                  <span class="select-input__value">Северный парк</span>
+
+                  <svg class="select-input__icon" viewBox="0 0 8 12">
+                    <use xlink:href="#arrow-icon"></use>
+                  </svg>
+
+                  <div class="select-input__options-wrapper">
+                    <ul class="select-input__options">
+                      <template class="select-input__option-template">
+                        <li class="select-input__option"></li>
+                      </template>
+                    </ul>
+                  </div>
+                </div>
               </fieldset>
             </div>
           </div>
@@ -236,7 +250,7 @@
             <input class="filter__btn filter__btn_type_show" type="submit" value="Показать 120 квартир">
           </div>
         </form>
-      </section> -->
+      </section>
     </div>
   </main>
 

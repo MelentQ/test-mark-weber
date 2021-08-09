@@ -12,6 +12,7 @@ export default class LinksWithPreview {
     this._preview = this._container.querySelector('.links-with-preview__preview');
     this._title = this._preview.querySelector('.links-with-preview__image-title');
     this._description = this._preview.querySelector('.links-with-preview__image-description');
+    this._image = this._preview.querySelector('.links-with-preview__image');
 
     this._data = data;
 
@@ -23,13 +24,17 @@ export default class LinksWithPreview {
    * добавляет им события
    */
   _renderLinks() {
-    this._data.links.forEach(linkData => {
+    this._data.forEach(linkData => {
       const linkContainer = this._getTemplateBySelector('.links-with-preview__link-template', this._linksContainer);
       const link = linkContainer.querySelector('.link');
 
+      // Рисуем саму ссылку на странице
       link.textContent = linkData.linkName;
       link.href = linkData.href;
-      this._setHoverEffect(link, linkData.previewTitle, linkData.previewDescription);
+
+      // При наведении должен отображаться соответствующий ей контент:
+      // Превью с изображением, заголовком и описанием.
+      this._setHoverEffect(link, linkData.image, linkData.previewTitle, linkData.previewDescription);
 
       this._linksContainer.append(linkContainer);
     });
@@ -41,10 +46,14 @@ export default class LinksWithPreview {
    * @param {String} previewTitle - заголовок превью для этой ссылки
    * @param {String} previewDescription - описание превью для этой ссылки
    */
-  _setHoverEffect(link, previewTitle, previewDescription) {
+  _setHoverEffect(link, previewImage, previewTitle, previewDescription) {
     link.addEventListener('mouseover', () => {
+      const image = require(`../images/complexes/${previewImage}`);
+
+      this._image.src = image;
       this._title.textContent = previewTitle;
       this._description.textContent = previewDescription;
+
       this._preview.classList.add("links-with-preview__preview_opened");
     })
 

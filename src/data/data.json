@@ -3,56 +3,82 @@
     {
       "linkName": "Северный парк",
       "href": "#",
+      "image": "severny-park.jpg",
       "previewTitle": "Северный парк",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой"
     },
     {
       "linkName": "Ренесанс",
       "href": "#",
+      "image": "photo-1.jpg",
       "previewTitle": "Ренесанс",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 2"
     },
     {
       "linkName": "Станция столичная",
       "href": "#",
+      "image": "photo-2.jpg",
       "previewTitle": "Станция столичная",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 3"
     },
     {
       "linkName": "Компасс сити",
       "href": "#",
+      "image": "severny-park.jpg",
       "previewTitle": "Компасс сити",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 4"
     },
     {
       "linkName": "Лето",
       "href": "#",
+      "image": "photo-1.jpg",
       "previewTitle": "Лето",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 5"
     },
     {
       "linkName": "Бруклин",
       "href": "#",
+      "image": "photo-2.jpg",
       "previewTitle": "Бруклин",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 6"
     },
     {
       "linkName": "Сказочный сад",
       "href": "#",
+      "image": "severny-park.jpg",
       "previewTitle": "Сказочный сад",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 7"
     },
     {
       "linkName": "Монблан",
       "href": "#",
+      "image": "photo-1.jpg",
       "previewTitle": "Монблан",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 8"
     },
     {
       "linkName": "Краски",
       "href": "#",
+      "image": "photo-2.jpg",
       "previewTitle": "Краски",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 9"
+    }
+  ],
+  "slides": [
+    {
+      "title": "Стильная архитектура и виды из окон будущей квартиры не оставят равнодушных",
+      "fileName": "Puppies.webm",
+      "type": "video"
+    },
+    {
+      "title": "Какой-то другой заголовок. Завлекающий текст, сочетающийся с красивыми цветами на фоне",
+      "fileName": "Flowers.webm",
+      "type": "video"
+    },
+    {
+      "title": "Какой-то другой заголовок. Изображение вместо видео тоже работает",
+      "fileName": "photo-1.jpg",
+      "type": "image"
     }
   ]
 }

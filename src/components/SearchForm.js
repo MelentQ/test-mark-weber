@@ -9,9 +9,9 @@ export default class SearchForm {
     this._form = document.forms[selector];
 
     this._rooms = this._form.querySelectorAll('.input_type_rooms');
-    this._squares = this._form.querySelectorAll('.input_type_square');
-    this._prices = this._form.querySelectorAll('.input_type_price');
-    this._place = this._form.querySelector('.select-input');
+    this._square = this._form.querySelectorAll('.input_type_square');
+    this._price = this._form.querySelectorAll('.input_type_price');
+    this._place = this._form.querySelector('.select-input__value');
     this._onSubmit = onSubmitCallback.bind(this);
 
     this._setEventListeners();
@@ -24,23 +24,23 @@ export default class SearchForm {
   getInputsValue() {
     const res = {
       rooms: {},
-      squares: {},
-      prices: {}
+      square: {},
+      price: {}
     };
 
     this._rooms.forEach(room => {
       res.rooms[room.name] = room.checked;
     })
 
-    this._squares.forEach(square => {
-      res.squares[square.name] = square.value;
+    this._square.forEach(square => {
+      res.square[square.name] = square.value;
     })
 
-    this._prices.forEach(price => {
-      res.prices[price.name] = price.value;
+    this._price.forEach(price => {
+      res.price[price.name] = price.value;
     })
 
-    res.place = this._place.value;
+    res.place = this._place.textContent;
 
     return res;
   }
@@ -62,14 +62,14 @@ export default class SearchForm {
     })
 
     // Назначаем стили при фокусе элемента text (площадь)
-    this._squares.forEach(item => {
+    this._square.forEach(item => {
       const container = item.closest('.text-input');
 
       this._setFocusEffects(item, container, 'text-input_focused');
     })
 
     // Назначаем стили при фокусе элемента text (цена)
-    this._prices.forEach(item => {
+    this._price.forEach(item => {
       const container = item.closest('.text-input');
 
       this._setFocusEffects(item, container, 'text-input_focused');
