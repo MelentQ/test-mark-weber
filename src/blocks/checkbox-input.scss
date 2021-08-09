@@ -36,12 +36,27 @@
   }
 
   &__pseudo-item {
-    display: block;
+    display: flex;
+    align-items: center;
 
     box-sizing: border-box;
-    padding: 20px 23px;
+    height: 56px;
+    padding: 0 23px;
 
     font-size: 16px;
     line-height: 1;
+
+    @media screen and (max-width: 1679px) {
+      padding: 0 20px;
+      height: 52px;
+    }
+
+    &_type {
+
+      &_text {
+        padding-left: 17px;
+        padding-right: 21px;
+      }
+    }
   }
 }

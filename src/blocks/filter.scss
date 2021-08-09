@@ -5,10 +5,14 @@
 
   box-sizing: border-box;
   width: 100%;
-  padding-top: 35px;
+  padding-top: 34px;
   padding-right: 40px;
   padding-bottom: 42px;
   padding-left: 40px;
+
+  @media screen and (max-width: 1679px) {
+    padding: 20px;
+  }
 
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 
@@ -30,7 +34,7 @@
   }
 
   &__container-name {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 
     font-size: 13px;
     line-height: 1;
@@ -63,6 +67,8 @@
 
   &__btn {
     box-sizing: border-box;
+    height: 56px;
+
     border-radius: 7px;
     color: $text-color;
     cursor: pointer;
@@ -75,7 +81,7 @@
         display: flex;
         align-items: center;
 
-        padding: 10px 10px 10px 19px;
+        padding: 0 12px 0 19px;
         margin-right: 20px;
 
         background: none;
@@ -83,7 +89,7 @@
       }
 
       &_show {
-        padding: 19px 23px 19px;
+        padding: 0 24px;
 
         background-color: $accent-color;
         border: none;

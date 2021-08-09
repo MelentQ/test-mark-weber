@@ -9,7 +9,7 @@
   justify-content: space-between;
 
   box-sizing: border-box;
-  padding-top: 40px;
+  padding-top: 36px;
   padding-bottom: 40px;
   width: 100%;
   min-height: $header-height;
@@ -17,7 +17,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    width: calc(100% - 400px);
+    width: calc(100% - 407px);
   }
 
   &__contacts {
@@ -32,6 +32,7 @@
     text-decoration: none;
     font-size: 20px;
     line-height: 1.15;
+    letter-spacing: -0.03em;
     @include link-hover-effect(0.5);
   }
 
@@ -63,12 +64,58 @@
   }
 
   &__menu-link {
+    position: relative;
+
+    display: block;
+
     color: $text-color;
     text-decoration: none;
     font-size: 16px;
     line-height: 1.19;
 
-    @include link-hover-effect(0.5);
+    &:hover .header__menu-link-real{
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+
+    &:focus .header__menu-link-real{
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+
+    &:hover .header__menu-link-pseudo{
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &:focus .header__menu-link-pseudo{
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__menu-link-real {
+    display: block;
+
+    transition: transform 0.3s, opacity 0.3s ease 0s;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__menu-link-pseudo {
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: transform 0.3s, opacity 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
   }
 
   &__menu-btn {

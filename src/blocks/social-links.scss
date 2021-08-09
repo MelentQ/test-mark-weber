@@ -1,11 +1,9 @@
 .social-links {
   position: relative;
 
+
   display: flex;
   align-items: center;
-
-  // !
-  min-height: 470px;
 
   &__logo-link {
     position: absolute;
@@ -20,6 +18,10 @@
     background-color: $text-color;
 
     @include link-hover-effect(0.5);
+
+    @media screen and (max-width: 1679px) {
+      left: -20px;
+    }
   }
 
   &__logo-link-image {
@@ -28,6 +30,9 @@
   }
 
   &__list {
+    position: relative;
+    top: 42px;
+
     display: flex;
     flex-direction: column;
 
@@ -38,7 +43,7 @@
   }
 
   &__list-item {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
     &:last-of-type {
       margin-bottom: 0;

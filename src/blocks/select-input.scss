@@ -17,6 +17,12 @@
 
   transition: background-color 0.3s ease;
 
+  @media screen and (max-width: 1679px) {
+    padding: 0 12px;
+    height: 52px;
+    width: 240px;
+  }
+
   &:hover {
     background-color: rgba(255,255,255,0.3);
   }
@@ -40,6 +46,11 @@
 
     fill: $text-color;
     transform: rotate(90deg);
+    transition: transform 0.3s ease;
+
+    &_opened {
+      transform: rotate(270deg);
+    }
   }
 
   &__options-wrapper {
@@ -58,6 +69,10 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s, opacity 0.3s linear;
+
+    @media screen and (max-width: 1679px) {
+      padding: 12px;
+    }
 
     &_opened {
       visibility: visible;

@@ -1,12 +1,15 @@
 export default class Dropdown {
   /**
    * Дропдаун, выпадающий список.
+   *
+   * TODO: окно с опциями появляется снизу или сверху в зависимости от свободного пространства.
    * @param {Object} selectors - объект с CSS селекторами
    * @param {Object} data - данные для генерации опций. См. документацию, которой нет.
    */
   constructor({containerSelector}, data) {
     this._container = document.querySelector(containerSelector);
     this._selectBtn = this._container;
+    this._btnIcon = this._selectBtn.querySelector('.select-input__icon');
     this._selectedOptionElement = this._selectBtn.querySelector('.select-input__value');
     this._optionsContainerWrapper = this._container.querySelector('.select-input__options-wrapper');
     this._optionsContainer = this._optionsContainerWrapper.querySelector('.select-input__options');
@@ -54,6 +57,8 @@ export default class Dropdown {
   _openOptions() {
     this._optionsContainerWrapper.classList.add('select-input__options-wrapper_opened');
     this._isOpened = true;
+
+    this._btnIcon.classList.add('select-input__icon_opened');
   }
 
   /**
@@ -62,6 +67,8 @@ export default class Dropdown {
   _closeOptions() {
     this._optionsContainerWrapper.classList.remove('select-input__options-wrapper_opened');
     this._isOpened = false;
+
+    this._btnIcon.classList.remove('select-input__icon_opened');
   }
 
   /**

@@ -64,6 +64,7 @@ export default class BackgroundSlider {
 
   _setEventListeners() {
     this._btnPrev.addEventListener('click', () => {
+      this._checkItemWidth();
       this._position += this._itemWidth;
       this._currentSlide--;
       this._updateTitle();
@@ -72,12 +73,17 @@ export default class BackgroundSlider {
     })
 
     this._btnNext.addEventListener('click', () => {
+      this._checkItemWidth();
       this._position -= this._itemWidth;
       this._currentSlide++;
       this._updateTitle();
 
       this._setPosition();
     })
+  }
+
+  _checkItemWidth() {
+    this._itemWidth = this._container.clientWidth;
   }
 
   _setPosition() {

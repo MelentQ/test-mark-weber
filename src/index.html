@@ -22,16 +22,28 @@
       <nav class="header__menu">
         <ul class="header__list">
           <li class="header__list-item">
-            <a href="#" class="header__menu-link">Квартиры</a>
+            <a href="#" class="header__menu-link">
+              <span class="header__menu-link-real">Квартиры</span>
+              <span class="header__menu-link-pseudo">Квартиры</span>
+            </a>
           </li>
           <li class="header__list-item">
-            <a href="#" class="header__menu-link">Ипотека</a>
+            <a href="#" class="header__menu-link">
+              <span class="header__menu-link-real">Ипотека</span>
+              <span class="header__menu-link-pseudo">Ипотека</span>
+            </a>
           </li>
           <li class="header__list-item">
-            <a href="#" class="header__menu-link">Коммерция</a>
+            <a href="#" class="header__menu-link">
+              <span class="header__menu-link-real">Коммерция</span>
+              <span class="header__menu-link-pseudo">Коммерция</span>
+            </a>
           </li>
           <li class="header__list-item">
-            <a href="#" class="header__menu-link">Управляющая компания</a>
+            <a href="#" class="header__menu-link">
+              <span class="header__menu-link-real">Управляющая компания</span>
+              <span class="header__menu-link-pseudo">Управляющая компания</span>
+            </a>
           </li>
 
           <li class="header__list-item">
@@ -131,7 +143,11 @@
                   <use xlink:href="#arrow-icon"></use>
                 </svg>
               </button>
-              <button class="intro__toggle-btn intro__toggle-btn_type_next intro__toggle-btn_active" type="button">
+              <button class="intro__toggle-btn intro__toggle-btn_type_next" type="button">
+                <svg class="intro__toggle-btn-circle-icon" viewBox="0 0 40 40">
+                  <circle class="intro__toggle-btn-circle" cx="20" cy="20" r="20"/>
+                  <circle class="intro__toggle-btn-circle-static" cx="20" cy="20" r="20"/>
+                </svg>
                 <svg class="intro__toggle-btn-icon intro__toggle-btn-icon_type_next">
                   <use xlink:href="#arrow-icon"></use>
                 </svg>
@@ -141,7 +157,7 @@
             <div class="intro__btns">
               <button class="intro__button intro__button_type_choose" type="button">
                 <svg class="intro__button-icon intro__button-icon_type_choose" viewBox="0 0 12 12">
-                  <path stroke="#fff" stroke-width=".7" d="M5.5.5v5h-5v1h5v5h1v-5h5v-1h-5v-5h-1z"/>
+                  <path stroke-width=".7" d="M5.5.5v5h-5v1h5v5h1v-5h5v-1h-5v-5h-1z"/>
                 </svg>
                 Выбрать квартиру
               </button>
@@ -164,7 +180,7 @@
               <fieldset class="filter__inputs-container">
                 <label class="checkbox-input checkbox-input_checked" for="amount0">
                   <input class="checkbox-input__hidden-item input input_type_rooms" id="amount0" name="0" type="checkbox" checked>
-                  <span class="checkbox-input__pseudo-item">Студия</span>
+                  <span class="checkbox-input__pseudo-item checkbox-input__pseudo-item_type_text">студия</span>
                 </label>
                 <label class="checkbox-input" for="amount1">
                   <input class="checkbox-input__hidden-item input input_type_rooms" id="amount1" name="1" type="checkbox">
