@@ -7,15 +7,15 @@
   transition: $target 0.3s ease;
 }
 
-@mixin link-hover-effect {
+@mixin link-hover-effect($opacity-on-hover) {
   @include transition(opacity);
 
   &:hover {
-    opacity: 0.5;
+    opacity: $opacity-on-hover;
   }
 
   &:focus {
     outline: none;
-    opacity: 0.5;
+    opacity: $opacity-on-hover;
   }
 }

@@ -1,11 +1,14 @@
 .header {
-  position: fixed;
+  // fixed || absolute
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
 
   display: flex;
   justify-content: space-between;
 
+  box-sizing: border-box;
   padding-top: 40px;
   padding-bottom: 40px;
   width: 100%;
@@ -23,8 +26,13 @@
   }
 
   &__contacts-number {
+    margin-bottom: 8px;
+
+    color: $text-color;
+    text-decoration: none;
     font-size: 20px;
     line-height: 1.15;
+    @include link-hover-effect(0.5);
   }
 
   &__contacts-label {
@@ -60,7 +68,7 @@
     font-size: 16px;
     line-height: 1.19;
 
-    @include link-hover-effect;
+    @include link-hover-effect(0.5);
   }
 
   &__menu-btn {
@@ -75,6 +83,6 @@
     border-bottom: solid 2px $text-color;
     cursor: pointer;
 
-    @include link-hover-effect;
+    @include link-hover-effect(0.5);
   }
 }

@@ -14,5 +14,30 @@
   &__section {
     box-sizing: border-box;
     padding: 0 40px;
+
+    &_place {
+
+      &_intro {
+        display: flex;
+        justify-content: space-between;
+
+        padding-top: 80px + $header-height;
+        padding-bottom: 120px;
+      }
+    }
+  }
+
+  &__section-container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 400px);
+  }
+
+  &__intro-wrapper {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }

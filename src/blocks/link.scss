@@ -1,0 +1,30 @@
+.link {
+  display: block;
+
+  position: relative;
+
+  width: fit-content;
+
+  font-size: 16px;
+  line-height: 1.19;
+  color: $text-color;
+  text-decoration: none;
+  opacity: 0.6;
+
+  @include link-hover-effect(1);
+
+  &:after {
+    content: '';
+
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $text-color;
+  }
+}

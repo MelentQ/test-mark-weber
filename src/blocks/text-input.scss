@@ -1,0 +1,62 @@
+.text-input {
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 20px 23px;
+
+  // !
+  max-width: 135px;
+
+  background-color: rgba(255,255,255,0.16);
+  border-right: solid 1px rgba(255,255,255, 0.3);
+  cursor: text;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  &:last-of-type {
+    border-right: none;
+  }
+
+  &_focused {
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  &__before-label {
+    margin-right: 4px;
+
+    opacity: 0.5;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  &__form-element {
+    $input-fs: 16px;
+
+    padding: 0;
+    width: none;
+    height: $input-fs;
+    // !
+    width: 50px;
+
+    background: none;
+    border: none;
+    color: $text-color;
+    font-size: $input-fs;
+    line-height: 1;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__after-label {
+    margin-left: 4px;
+
+    font-size: 16px;
+    line-height: 1;
+  }
+}

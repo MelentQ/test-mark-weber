@@ -1,0 +1,31 @@
+.select-input {
+  box-sizing: border-box;
+  padding: 0 23px;
+  height: 56px;
+  width: 270px;
+
+  background-color: rgba(255,255,255,0.16);
+  border: none;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  &__option {
+    box-sizing: border-box;
+    padding: 0 23px;
+
+    color: $alt-text-color;
+  }
+}
