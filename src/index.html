@@ -15,42 +15,48 @@
 
     <div class="header__container">
       <div class="header__contacts">
-        <a href="tel:+78002223790" class="header__contacts-number">8 800 222-37-90</a>
+        <a href="tel:+78002223790" class="header__contacts-number">
+          <span class="header__contacts-number-text">8 800 222-37-90</span>
+          <svg class="header__contacts-number-icon" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="17.5" stroke="#fff"/>
+            <path fill="#fff" d="M23.7 27H23c-3.4-.7-6.6-2.4-9.1-4.7a17.3 17.3 0 01-5-8.7 2.4 2.4 0 01.8-2.3l2.2-2a1.1 1.1 0 011.6.2l2.8 3.9a.8.8 0 010 1L14.8 16a10.6 10.6 0 005.6 5.3l1.8-1.3a1 1 0 011 0l4.2 2.6a1 1 0 01.5.7 1 1 0 01-.3 1l-2.2 2a2.6 2.6 0 01-1.8.7zm-11-17l-2.1 2.1a1.3 1.3 0 00-.5 1.3c.7 3 2.3 5.9 4.7 8.1 2.4 2.2 5.3 3.8 8.6 4.4a1.6 1.6 0 001.3-.4l2.2-2-4-2.6-1.9 1.5a.6.6 0 01-.5 0 11 11 0 01-4-2.5c-1.2-1-2.1-2.4-2.7-3.8a.5.5 0 01.1-.5l1.5-1.7-2.6-3.8z"/>
+          </svg>
+        </a>
         <span class="header__contacts-label">Работаем ежедневно с 10:00 до 20:00</span>
       </div>
 
-      <nav class="header__menu">
-        <ul class="header__list">
-          <li class="header__list-item">
-            <a href="#" class="header__menu-link">
-              <span class="header__menu-link-real">Квартиры</span>
-              <span class="header__menu-link-pseudo">Квартиры</span>
-            </a>
-          </li>
-          <li class="header__list-item">
-            <a href="#" class="header__menu-link">
-              <span class="header__menu-link-real">Ипотека</span>
-              <span class="header__menu-link-pseudo">Ипотека</span>
-            </a>
-          </li>
-          <li class="header__list-item">
-            <a href="#" class="header__menu-link">
-              <span class="header__menu-link-real">Коммерция</span>
-              <span class="header__menu-link-pseudo">Коммерция</span>
-            </a>
-          </li>
-          <li class="header__list-item">
-            <a href="#" class="header__menu-link">
-              <span class="header__menu-link-real">Управляющая компания</span>
-              <span class="header__menu-link-pseudo">Управляющая компания</span>
-            </a>
-          </li>
+      <div class="header__menu-container">
+        <nav class="header__menu">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a href="#" class="header__menu-link">
+                <span class="header__menu-link-real">Квартиры</span>
+                <span class="header__menu-link-pseudo">Квартиры</span>
+              </a>
+            </li>
+            <li class="header__list-item">
+              <a href="#" class="header__menu-link">
+                <span class="header__menu-link-real">Ипотека</span>
+                <span class="header__menu-link-pseudo">Ипотека</span>
+              </a>
+            </li>
+            <li class="header__list-item">
+              <a href="#" class="header__menu-link">
+                <span class="header__menu-link-real">Коммерция</span>
+                <span class="header__menu-link-pseudo">Коммерция</span>
+              </a>
+            </li>
+            <li class="header__list-item">
+              <a href="#" class="header__menu-link">
+                <span class="header__menu-link-real">Управляющая компания</span>
+                <span class="header__menu-link-pseudo">Управляющая компания</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-          <li class="header__list-item">
-            <button class="header__menu-btn" title="Меню" type="button"></button>
-          </li>
-        </ul>
-      </nav>
+        <button class="header__menu-btn" title="Меню" type="button"></button>
+      </div>
     </div>
   </header>
 
@@ -73,10 +79,12 @@
         </ul>
       </div>
 
+      <div class="page__overlay"></div>
+
       <section class="page__section page__section_place_intro">
         <div class="social-links">
           <a class="social-links__logo-link" href="#" target="_blank" rel="noopener" title="Дом РФ">
-            <img class="social-links__logo-link-image" src="<%=require('./images/logo-dom-rf.svg')%>" loading="lazy" alt="Дом РФ">
+            <img class="social-links__logo-link-image" src="<%=require('./images/dom-rf.png')%>" loading="lazy" alt="Дом РФ">
           </a>
 
 
@@ -172,10 +180,10 @@
         </div>
       </section>
 
-      <section class="filter-form">
-        <form class="filter" name="filter">
+      <section class="filter">
+        <form class="filter__form" name="filter">
           <div class="filter__inputs">
-            <div class="filter__container">
+            <div class="filter__container filter__container_type_rooms">
               <span class="filter__container-name">Количество комнат</span>
               <fieldset class="filter__inputs-container">
                 <label class="checkbox-input checkbox-input_checked" for="amount0">
@@ -201,7 +209,7 @@
               </fieldset>
             </div>
 
-            <div class="filter__container">
+            <div class="filter__container filter__container_type_square">
               <span class="filter__container-name">Площадь</span>
               <fieldset class="filter__inputs-container">
                 <label class="text-input" for="squareFrom">
@@ -218,7 +226,7 @@
               </fieldset>
             </div>
 
-            <div class="filter__container">
+            <div class="filter__container filter__container_type_price">
               <span class="filter__container-name">Стоимость, млн ₽</span>
               <fieldset class="filter__inputs-container">
                 <label class="text-input" for="priceFrom">
@@ -233,7 +241,7 @@
               </fieldset>
             </div>
 
-            <div class="filter__container">
+            <div class="filter__container filter__container_type_place">
               <span class="filter__container-name">Жилой комплекс</span>
               <fieldset class="filter__inputs-container filter__inputs-container_type_dropdown">
                 <div class="select-input">
@@ -266,7 +274,19 @@
             <input class="filter__btn filter__btn_type_show" type="submit" value="Показать 120 квартир">
           </div>
         </form>
+
+        <button class="filter__mobile-btn" type="button">
+          <span class="filter__mobile-btn-text">Подобрать квартиру</span>
+          <svg class="filter__mobile-btn-icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M16 14.93L14.93 16l-4.4-4.4a6.5 6.5 0 111.07-1.07l4.4 4.4zm-9.48-3.41a5 5 0 100-10 5 5 0 000 10z" clip-rule="evenodd"/>
+          </svg>
+        </button>
       </section>
+
+      <a class="page__social-link" href="#" target="_blank" rel="noopener" title="Дом РФ">
+        <img class="page__social-link-icon" src="<%=require('./images/dom-rf-mobile.png')%>" loading="lazy" alt="Дом РФ">
+      </a>
+
     </div>
   </main>
 

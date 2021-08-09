@@ -13,6 +13,11 @@
 
   @include link-hover-effect(1);
 
+  @media screen and (max-width: 1279px) {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
   &:after {
     content: '';
 

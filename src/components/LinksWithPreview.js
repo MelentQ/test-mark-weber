@@ -14,6 +14,8 @@ export default class LinksWithPreview {
     this._description = this._preview.querySelector('.links-with-preview__image-description');
     this._image = this._preview.querySelector('.links-with-preview__image');
 
+    this._overlay = document.querySelector('.page__overlay');
+
     this._data = data;
 
     this._renderLinks();
@@ -55,12 +57,16 @@ export default class LinksWithPreview {
       this._description.textContent = previewDescription;
 
       this._preview.classList.add("links-with-preview__preview_opened");
+
+      this._overlay.classList.add("page__overlay_focused");
     })
 
     link.addEventListener('mouseout', () => {
       this._title.textContent = "";
       this._description.textContent = "";
       this._preview.classList.remove("links-with-preview__preview_opened");
+
+      this._overlay.classList.remove("page__overlay_focused");
     })
   }
 

@@ -1,26 +1,27 @@
 .social-links {
   position: relative;
 
-
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
 
   &__logo-link {
     position: absolute;
     top: 0;
-    left: -40px;
+    left: -50px;
 
     display: block;
 
     width: 200px;
     height: 56px;
 
-    background-color: $text-color;
-
     @include link-hover-effect(0.5);
 
     @media screen and (max-width: 1679px) {
-      left: -20px;
+      left: -30px;
     }
   }
 
