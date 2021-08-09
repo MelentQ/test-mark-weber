@@ -31,6 +31,10 @@ export default class BackgroundSlider {
     this._titleElement = document.querySelector('.intro__title');
   }
 
+  /**
+   * Рендерит слайды, получая данные из массива
+   * @param {Array of String} data
+   */
   _generateSlides(data) {
     data.forEach(slide => {
       if (slide.type === "video") {
@@ -62,6 +66,9 @@ export default class BackgroundSlider {
     })
   }
 
+  /**
+   * Назначает обработчики кнопкам переключения
+   */
   _setEventListeners() {
     this._btnPrev.addEventListener('click', () => {
       this._checkItemWidth();
@@ -82,25 +89,53 @@ export default class BackgroundSlider {
     })
   }
 
+  /**
+   * Обновляет на актуальную ширину слайда
+   */
   _checkItemWidth() {
     this._itemWidth = this._container.clientWidth;
   }
 
+  /**
+   * Передвигает трек на расстояние, равное this._position
+   */
   _setPosition() {
     this._track.style.transform = `translateX(${this._position}px)`;
 
     this._checkBtns();
   }
 
+  /**
+   * Проверяет граничные условия для трека.
+   * В случае крайних точек отключает кнопки.
+   */
   _checkBtns() {
     this._position === 0 ?
-      this._btnPrev.setAttribute('disabled', 'disabled') :
-      this._btnPrev.removeAttribute('disabled');
+      this._disableBtn(this._btnPrev) :
+      this._enableBtn(this._btnPrev);
 
     const maxPos = (this._itemsCount - 1) * this._itemWidth;
     this._position === -maxPos ?
-      this._btnNext.setAttribute('disabled', 'disabled') :
-      this._btnNext.removeAttribute('disabled');
+      this._disableBtn(this._btnNext) :
+      this._enableBtn(this._btnNext);
+  }
+
+  /**
+   * Отключает кнопку
+   * @param {Object} btnElement - DOM-элемент кнопки
+   */
+  _disableBtn(btnElement) {
+    btnElement.setAttribute('disabled', 'disabled');
+    btnElement.classList.add('intro__toggle-btn_disabled');
+  }
+
+  /**
+   * Включает кнопку
+   * @param {Object} btnElement - DOM-элемент кнопки
+   */
+  _enableBtn(btnElement) {
+    btnElement.removeAttribute('disabled');
+    btnElement.classList.remove('intro__toggle-btn_disabled');
   }
 
   /**

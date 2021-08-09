@@ -53,6 +53,7 @@ export default class LinksWithPreview {
       const image = require(`../images/complexes/${previewImage}`);
 
       this._image.src = image;
+      this._image.alt = previewTitle;
       this._title.textContent = previewTitle;
       this._description.textContent = previewDescription;
 

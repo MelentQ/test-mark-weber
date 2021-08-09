@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Тестовое задание на front-end разработчика в студии Марк Вебер">
+  <meta name="keywords" content="тестовое задание студия Марк Вебер"/>
+
+  <meta property="og:title" content="Тестовое задание на front-end разработчика в студии Марк Вебер"/>
+  <meta property="og:description" content="Тестовое задание на front-end разработчика в студии Марк Вебер"/>
+  <meta property="og:image" content="<%=require('./images/complexes/severny-park.webp')%>"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content= "https://melentq.github.io/test-mark-weber/"/>
+  <meta property="og:locale" content="ru_RU"/>
+
+  <link rel="shortcut icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon">
+
   <title>Test</title>
 </head>
 <body class="page">
@@ -137,25 +150,27 @@
               </template>
             </ul>
 
-            <figure class="links-with-preview__preview">
-              <div class="links-with-preview__image-container">
-                <img class="links-with-preview__image" loading="lazy">
-              </div>
-              <figcaption class="links-with-preview__image-title"></figcaption>
+            <div class="links-with-preview__preview">
+              <figure class="links-with-preview__preview-image">
+                <div class="links-with-preview__image-container">
+                  <img class="links-with-preview__image" loading="lazy" src="." alt=".">
+                </div>
+                <figcaption class="links-with-preview__image-title"></figcaption>
+              </figure>
               <span class="links-with-preview__image-description"></span>
-            </figure>
+            </div>
           </section>
 
           <section class="intro">
             <h2 class="intro__title">Стильная архитектура и виды из окон будущей квартиры не оставят равнодушных</h2>
 
             <div class="intro__toggle-btns">
-              <button class="intro__toggle-btn intro__toggle-btn_type_prev" type="button">
+              <button class="intro__toggle-btn intro__toggle-btn_type_prev" type="button" title="Назад">
                 <svg class="intro__toggle-btn-icon intro__toggle-btn-icon_type_prev">
                   <use xlink:href="#arrow-icon"></use>
                 </svg>
               </button>
-              <button class="intro__toggle-btn intro__toggle-btn_type_next" type="button">
+              <button class="intro__toggle-btn intro__toggle-btn_type_next" type="button" title="Вперед">
                 <svg class="intro__toggle-btn-circle-icon" viewBox="0 0 40 40">
                   <circle class="intro__toggle-btn-circle" cx="20" cy="20" r="20"/>
                   <circle class="intro__toggle-btn-circle-static" cx="20" cy="20" r="20"/>
@@ -185,6 +200,7 @@
       </div>
 
       <section class="filter">
+        <h2 class="visually-hidden">Форма поиска</h2>
         <form class="filter__form" name="filter">
           <div class="filter__inputs">
             <div class="filter__container filter__container_type_rooms">

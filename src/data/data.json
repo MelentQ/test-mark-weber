@@ -3,63 +3,63 @@
     {
       "linkName": "Северный парк",
       "href": "#",
-      "image": "severny-park.jpg",
+      "image": "severny-park.webp",
       "previewTitle": "Северный парк",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой"
     },
     {
       "linkName": "Ренесанс",
       "href": "#",
-      "image": "photo-1.jpg",
+      "image": "photo-1.webp",
       "previewTitle": "Ренесанс",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 2 Жилой комплекс небывалого масштаба с развитой инфраструктурой 2"
     },
     {
       "linkName": "Станция столичная",
       "href": "#",
-      "image": "photo-2.jpg",
+      "image": "photo-2.webp",
       "previewTitle": "Станция столичная",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 3"
     },
     {
       "linkName": "Компасс сити",
       "href": "#",
-      "image": "severny-park.jpg",
+      "image": "severny-park.webp",
       "previewTitle": "Компасс сити",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 4 Жилой комплекс небывалого масштаба с развитой инфраструктурой 4"
     },
     {
       "linkName": "Лето",
       "href": "#",
-      "image": "photo-1.jpg",
+      "image": "photo-1.webp",
       "previewTitle": "Лето",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 5 Жилой комплекс небывалого масштаба с развитой инфраструктурой 5"
     },
     {
       "linkName": "Бруклин",
       "href": "#",
-      "image": "photo-2.jpg",
+      "image": "photo-2.webp",
       "previewTitle": "Бруклин",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 6"
     },
     {
       "linkName": "Сказочный сад",
       "href": "#",
-      "image": "severny-park.jpg",
+      "image": "severny-park.webp",
       "previewTitle": "Сказочный сад",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 7 Жилой комплекс небывалого масштаба с развитой инфраструктурой 7"
     },
     {
       "linkName": "Монблан",
       "href": "#",
-      "image": "photo-1.jpg",
+      "image": "photo-1.webp",
       "previewTitle": "Монблан",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 8"
     },
     {
       "linkName": "Краски",
       "href": "#",
-      "image": "photo-2.jpg",
+      "image": "photo-2.webp",
       "previewTitle": "Краски",
       "previewDescription": "Жилой комплекс небывалого масштаба с развитой инфраструктурой 9"
     }
@@ -77,7 +77,7 @@
     },
     {
       "title": "Какой-то другой заголовок. Изображение вместо видео тоже работает",
-      "fileName": "photo-1.jpg",
+      "fileName": "photo-1.webp",
       "type": "image"
     }
   ]
