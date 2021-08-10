@@ -46,6 +46,14 @@ export default class RangeSlider {
         'max': max
       }
     });
+
+    // Задаём для Aria input'ов title
+    // Для accessibility
+    const minButton = this._slider.querySelector('.noUi-handle-lower');
+    minButton.title = "Min";
+
+    const maxButton = this._slider.querySelector('.noUi-handle-upper');
+    maxButton.title = "Max";
   }
 
   /**
