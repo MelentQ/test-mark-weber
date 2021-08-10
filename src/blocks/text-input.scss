@@ -45,16 +45,26 @@
     $input-fs: 16px;
 
     padding: 0;
-    width: none;
     height: $input-fs;
-    // !
-    width: 50px;
 
     background: none;
     border: none;
     color: $text-color;
     font-size: $input-fs;
     line-height: 1;
+
+    // Скрытие стрелок в number input
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
 
     &:focus {
       outline: none;

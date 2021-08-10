@@ -234,16 +234,18 @@
               <fieldset class="filter__inputs-container">
                 <label class="text-input" for="squareFrom">
                   <span class="text-input__before-label">от</span>
-                  <input class="text-input__form-element input input_type_square" name="from" type="text" value="32" id="squareFrom">
+                  <input class="text-input__form-element text-input__form-element_type_from input input_type_square" min="0" max="186" step="2" name="from" type="number" value="32" id="squareFrom">
                   <span class="text-input__after-label">м²</span>
                 </label>
 
                 <label class="text-input" for="squareTo">
                   <span class="text-input__before-label">до</span>
-                  <input class="text-input__form-element input input_type_square" name="to" type="text" value="186" id="squareTo">
+                  <input class="text-input__form-element text-input__form-element_type_to input input_type_square" min="0" max="186" step="2" name="to" type="number" value="186" id="squareTo">
                   <span class="text-input__after-label">м²</span>
                 </label>
               </fieldset>
+
+              <div class="range-slider range-slider_type_square"></div>
             </div>
 
             <div class="filter__container filter__container_type_price">
@@ -251,14 +253,16 @@
               <fieldset class="filter__inputs-container">
                 <label class="text-input" for="priceFrom">
                   <span class="text-input__before-label">от</span>
-                  <input class="text-input__form-element input input_type_price" name="from" type="text" value="1.5" id="priceFrom">
+                  <input class="text-input__form-element text-input__form-element_type_from input input_type_price" min="0" max="17.5" step="0.5" name="from" type="number" value="1.5" id="priceFrom">
                 </label>
 
                 <label class="text-input" for="priceTo">
                   <span class="text-input__before-label">до</span>
-                  <input class="text-input__form-element input input_type_price" name="to" type="text" value="17.5" id="priceTo">
+                  <input class="text-input__form-element text-input__form-element_type_to input input_type_price" min="0" max="20" step="0.5" name="to" type="number" value="17.5" id="priceTo">
                 </label>
               </fieldset>
+
+              <div class="range-slider range-slider_type_price"></div>
             </div>
 
             <div class="filter__container filter__container_type_place">

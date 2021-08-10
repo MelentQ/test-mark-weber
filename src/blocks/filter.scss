@@ -33,6 +33,8 @@
   }
 
   &__container {
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
@@ -99,6 +101,10 @@
     cursor: pointer;
 
     @include link-hover-effect(0.5);
+
+    @media screen and (max-width: 1679px) {
+      height: 52px;
+    }
 
     &_type {
 
